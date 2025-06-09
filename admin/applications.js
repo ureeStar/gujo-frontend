@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("http://localhost:8080/admin/applications", {
+    const response = await fetch("https://gujo-backend.onrender.com/admin/applications", {
       method: "GET",
       credentials: "include"
     });
@@ -66,7 +66,7 @@ document.addEventListener("click", async (e) => {
     if (!confirm("정말 삭제하시겠습니까?")) return;
 
     try {
-      const response = await fetch(`http://localhost:8080/admin/applications/${id}`, {
+      const response = await fetch(`https://gujo-backend.onrender.com/admin/applications/${id}`, {
         method: "DELETE",
         credentials: "include"
       });

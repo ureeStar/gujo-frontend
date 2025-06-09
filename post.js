@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("http://localhost:8080/post", {
+    const response = await fetch("https://gujo-backend.onrender.com/post", {
       method: "GET",
       credentials: "include"
     });

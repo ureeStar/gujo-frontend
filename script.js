@@ -207,7 +207,7 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("http://localhost:8080/apply", {
+      const response = await fetch("https://gujo-backend.onrender.com/apply", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -235,7 +235,7 @@ async function login() {
   const username = document.getElementById("username").value;
   const password = document.getElementById("password").value;
 
-  const response = await fetch("http://localhost:8080/auth/login", {
+  const response = await fetch("https://gujo-backend.onrender.com/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
