@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>견적 문의 | 구조변경 박대장</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- 견적 문의 폼 css -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .form-row {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        .form-label {
+            width: 120px;
+            flex-shrink: 0;
+        }
+        .form-input {
+            flex: 1;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        textarea {
+            height: 100px;
+        }
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+        .checkbox-row input[type="checkbox"] {
+        margin-right: 0; /* 체크박스 오른쪽 여백 제거 */
+        }
+
+        .checkbox-row label {
+        display: inline-block;
+        margin-left: 0; /* 기본 여백 제거 */
+        }
+        
+        #privacy {
+            width: 20px;
+        }
+
+        #form-button {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5rem;
+        }
+
+        .buttons button {
+            padding: 0.5rem 1rem;
+            margin-right: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .cancel {
+            background-color: #ccc;
+        }
+        .submit {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .submit:hover {
+            background-color: #0056b3;
+        }
+        .cancel:hover {
+            background-color: #999;
+        }
+
+.modal {
+  display: none; /* 기본적으로 숨김 */
+  position: fixed;
+  z-index: 9999; /* 다른 요소 위에 */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* 스크롤 */
+  background-color: rgba(0,0,0,0.5); /* 반투명 배경 */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.modal-content #closeBtn {
+  display: block;          /* 블록으로 만들어서 줄바꿈 */
+  margin: 2rem auto 0;     /* 상단 여백 + 자동 좌우 여백으로 가운데 정렬 */
+  padding: 0.5rem 2rem;    /* 버튼 크기 조정 */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  color: black;
+}
+
+.close {
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+#privacyLink {
+  color: gray;
+}
+</style>
+</head>
+<body>
+<header>
+    <div class="logo"> 
+        <a href="index.html">구조변경 박대장</a>
+    </div>
+    <nav>
+        <button data-href="index.html">홈</button>
+        <button data-href="about.html">소개</button>
+        <button data-href="process.html">작업 과정</button>
+        <button data-href="gallery.html">작업 사진</button>
+        <button data-href="map.html">이용 안내</button>
+        <button data-href="contact.html">견적 문의</button>
+        <button data-href="post.html">문의 게시판</button>
+    </nav>
+        <div class="login">
+            <a href="login.html" style="color:rgb(140, 140, 140)">관리자 로그인</a>
+        </div>
+</header>
+
+<section class="section">
+    <h1>견적 문의</h1>
+    <p style="font-size: 14px;">*견적 제안은 고객님의 구조변경 차량에 대한 요청 사항 확인 후 유선상으로 진행됩니다.</p>
+    <div class="container">
+    <form id="inquiryForm">
+  <div class="form-row">
+    <label class="form-label" for="name">이름</label>
+    <div class="form-input"><input type="text" id="name" name="name"></div>
+  </div>
+  <div class="form-row">
+    <label class="form-label" for="contact">연락처</label>
+    <div class="form-input"><input type="text" id="contact" name="contact"></div>
+  </div>
+  <div class="form-row">
+    <label class="form-label" for="message">문의사항</label>
+    <div class="form-input"><textarea id="message" name="message"></textarea></div>
+  </div>
+
+  <div class="checkbox-row">
+    <input type="checkbox" id="privacy" name="privacy">
+    <label for="privacy">개인정보 수집 및 이용에 동의합니다. <a href="#" id="privacyLink">내용보기</a></label>
+  </div>
+
+  <!-- 모달 -->
+  <div id="privacyModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>개인정보 수집 및 이용에 동의</h3>
+      <p>< 개인정보 수집 및 이용에 대한 안내 ><br>
+        1. 수집/이용 목적: 예약, 문의 등 고객 요청 처리 및 결과 회신<br>
+        2. 수집 항목: 이름, 연락처<br>
+        3. 보유 기간: 고객 요청 처리 후 3개월<br>
+        4. 동의는 선택 사항이나 거부 시 이용이 제한될 수 있습니다.
+      </p>
+      <button id="closeBtn" type="button">닫기</button>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button type="button" class="cancel">취소</button>
+    <button type="submit" class="submit">등록</button>
+  </div>
+</form>
+
+  </div>
+
+</section>
+
+<footer>
+    <div class="footer_inner">
+        <div class="footer_logo">
+            <p>&copy; 2025 구조변경 박대장</p>
+        
+            <div class="sns_btns">
+                <button class="sns_btn" onclick="window.open('https://www.youtube.com/@parkdaejang')">>
+                    <!-- 유튜브 아이콘 (SVG) -->
+                    <img src="/image/Youtube_logo.png" alt="유튜브 아이콘" style="width: 39px; height: 26px;">
+                </button>
+                <button class="sns_btn" onclick="window.open('https://m.blog.naver.com/tuning_manager?tab=1')">
+                    <!-- 네이버 블로그 아이콘 (SVG) -->
+                    <img src="/image/blog2.png" alt="네이버 블로그 아이콘" style="width: 36px; height: 36px;">
+                </button>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

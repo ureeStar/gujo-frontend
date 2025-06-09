@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>로그인</title>
+</head>
+<body>
+  <div class="login-container">
+    <h2>로그인</h2>
+    <input type="text" id="username" placeholder="아이디 입력" />
+    <input type="password" id="password" placeholder="비밀번호 입력" />
+    <button onclick="login()">로그인</button>
+  </div>
+
+  <script src="script.js"></script>
+
+  <style>
+    /* 전체 배경 및 폰트 정리 */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* 로그인 박스 */
+.login-container {
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 320px;
+  text-align: center;
+}
+
+/* 제목 */
+.login-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* 입력창 공통 */
+.login-container input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* 버튼 */
+.login-container button {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+  </style>
+</body>
+</html>

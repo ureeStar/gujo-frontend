@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8"/>
+	<title>오시는 길 | 구조변경 박대장</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<div class="logo"> 
+			<a href="index.html">구조변경 박대장</a>
+		</div>
+		<nav>
+			<button data-href="index.html">홈</button>
+			<button data-href="about.html">소개</button>
+			<button data-href="process.html">작업 과정</button>
+			<button data-href="gallery.html">작업 사진</button>
+			<button data-href="map.html">이용 안내</button>
+			<button data-href="contact.html">견적 문의</button>
+			<button data-href="post.html">문의 게시판</button>
+		</nav>
+        <div class="login">
+            <a href="login.html" style="color:rgb(140, 140, 140)">관리자 로그인</a>
+        </div>
+</header>
+<div class="tabs">
+    <div class="tab active" data-tab="tab1">구조변경 박대장</div>
+    <div class="tab" data-tab="tab2">오시는 길</div>
+  </div>
+<section class="section">
+	<!-- 구조변경 박대장 TAP -->
+	<div class="tab-content active" id="tab1">
+		<img src="https://modo-phinf.pstatic.net/20230328_248/1680008049513YUaO8_PNG/mosaU3MTet.png?type=w720" alt="구조변경 박대장" style="width:73%;"/>
+		<div class="text-content">
+			<p>∙ 최저가 보장<br>
+				→ 구조 변경(튜닝) 검사 완료 후 검사료 후불제 결재</p>
+			<p>∙ 원스톱 서비스<br>
+				→ 차량 제원 실측, 서류 작성 및 접수, 검사소 동행까지 원스톱 서비스 진행</p>
+			<p>∙ 아래 항목으로 불합격 시 당일 수정으로 승인 처리 진행<br>
+				→ 승인되지 않은 불법 튜닝 및 구조변경, 전조등, 방향지시등, 후미등 외 각종 등화, 브레이크 검사 등</p>
+		</div>
+	</div>
+
+	<!-- 오시는 길 TAP -->
+	<div class="tab-content" id="tab2">
+		<h1>오시는 길</h1>
+		<!-- 지도 -->
+	<div id="map" style="width:70%;height:400px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fff3cbc496882d72709f46f82dbac1a8"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new kakao.maps.LatLng(37.06986, 127.01770),
+			level: 3
+		};
+
+		var map = new kakao.maps.Map(container, options);
+	</script>
+		<!-- 지도 끝 -->
+
+	<div class="text-content">
+		<div class="map-row-buttons">
+			<div class="address-info">
+				<p>다원엔지니어링</p>
+				<h1 style="color: #007bff; font-weight:400;">경기도 평택시 고덕면 두릉리 245</h1>
+			</div>
+			<div class="map-buttons">
+				<button class="map-button" id="find-way-btn">길찾기</button>
+				<button class="map-button" id="view-map-btn">지도에서 보기</button>
+			</div>
+		</div>
+		
+		<div class="detail-info">
+			<div class="info-item">
+			<span class="icon">📍</span>
+			<div>
+				<strong>오시는길</strong>
+				<p>화물차, 특장차 구조변경(튜닝) 대행 전문<br>
+				윙바디, 탑차 제작 및 수리 가능<br>
+				방통차, 집게차, 적재함 보강 및 제작 가능<br>
+				주차정보 무료</p>
+			</div>
+			</div>
+
+			<div class="info-item">
+			<span class="icon">⏰</span>
+			<div>
+				<strong>이용시간</strong>
+				<p>매일 09:00 ~ 18:00<br>
+				이외 시간은 문자 주시면 연락드리겠습니다.</p>
+			</div>
+			</div>
+
+			<div class="info-item">
+			<span class="icon">📞</span>
+			<div>
+				<strong>전화번호</strong>
+				<p>010-4789-8187</p>
+			</div>
+			</div>
+
+			<div class="info-item">
+			<span class="icon">📋</span>
+			<div>
+				<strong>이용안내</strong>
+				<p>예약 및 방문접수/출장 가능</p>
+			</div>
+			</div>
+		</div>
+	</div>
+	<p>전화: 010-4789-8187</p>
+</div>
+</section>
+
+<script src="script.js"></script>
+
+<footer>
+    <div class="footer_inner">
+        <div class="footer_logo">
+            <p>&copy; 2025 구조변경 박대장</p>
+        
+            <div class="sns_btns">
+                <button class="sns_btn" onclick="window.open('https://www.youtube.com/@parkdaejang')">>
+                    <!-- 유튜브 아이콘 (SVG) -->
+                    <img src="/image/Youtube_logo.png" alt="유튜브 아이콘" style="width: 39px; height: 26px;">
+                </button>
+                <button class="sns_btn" onclick="window.open('https://m.blog.naver.com/tuning_manager?tab=1')">
+                    <!-- 네이버 블로그 아이콘 (SVG) -->
+                    <img src="/image/blog2.png" alt="네이버 블로그 아이콘" style="width: 36px; height: 36px;">
+                </button>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
