@@ -345,3 +345,34 @@ footer {
   color:#222
 }
 
+/* 여기부터 새로 시작*/
+.circle-button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 40px 0 20px 0; /* 버튼과 이미지 사이 간격 */
+  background-color: #ffffff;
+}
+
+.circle-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 120px;           /* ✅ 가로 길이: 타원 형태 */
+  height: 70px;           /* ✅ 세로 길이 */
+  border-radius: 35px;    /* ✅ 타원 만들기 (세로의 절반) */
+  background-color: #5fc4ff;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.circle-button:hover {
+  transform: scale(1.05);
+  background-color: #1692ff;
+}
